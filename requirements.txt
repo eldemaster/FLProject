@@ -1,43 +1,10 @@
-# Install with:
-#   pip install -r requirements.txt \
-#     --index-url https://download.pytorch.org/whl/cpu \
-#     --extra-index-url https://pypi.org/simple
-#
-# Note: torch wheels for ARM CPU come from the PyTorch CPU index; torchvision from PyPI.
-
-# Core runtime (DFL + ML)
+# Install with: pip install -r requirements.txt
+# Torch CPU wheels from PyTorch index; others from PyPI (handled in Dockerfile).
 flwr==1.22.0
 numpy==2.3.3
 pandas==2.3.2
 scikit-learn==1.7.2
 scipy==1.16.2
 PyYAML==6.0.2
-
-# PyTorch (CPU) + Vision (match the same major/minor)
-torch==2.7.0           # from PyTorch CPU index
-torchvision==0.22.0    # from PyPI
-
-# Utilities (optional but useful)
-tensorboard==2.17.1
-rich==13.9.4
-
-# Low-level deps pinned by freeze; safe to keep
-filelock==3.13.1
-fsspec==2024.6.1
-grpcio==1.75.0
-grpcio-health-checking==1.62.3
-joblib==1.5.2
-pillow==11.3.0
-protobuf==4.25.8
-python-dateutil==2.9.0.post0
-pytz==2025.2
-threadpoolctl==3.6.0
-typing_extensions==4.15.0
-tzdata==2025.2
-urllib3==2.5.0
-idna==3.10
-certifi==2025.8.3
-requests==2.32.5
-Jinja2==3.1.4
-MarkupSafe==2.1.5
-Pygments==2.19.2
+torch==2.7.0
+# (No torchvision needed for the vector MLP client)
